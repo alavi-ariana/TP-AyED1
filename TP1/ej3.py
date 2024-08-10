@@ -14,8 +14,8 @@ def one_to_twenty(cant, valor):
     total = valor * cant
     return total
 
-def calculo_pasaje(cant, valor, porcentage):
-    total = cant * (valor * porcentage)
+def calculo_pasaje(cant, valor, percentage):
+    total = cant * (valor * percentage)
     return total
 
 def es_valido(dato, lim1):
