@@ -38,10 +38,8 @@ def main():
 
 ###Verificación del comportamiento de la función
 def verificar():
-    while True:
-        show_boolean(fechas_validas, 0)
-        show_boolean(fechas_invalidas, 0)
-        break
+    show_boolean(fechas_validas, 0)
+    show_boolean(fechas_invalidas, 0)
     return None
 
 def show_boolean(list, ind):
