@@ -30,9 +30,30 @@ def main():
     month = int(input("Ingrese el mes: "))
     year = int(input("Ingrese el año: "))
     if es_fecha_valida(day, month, year):
+        print(es_fecha_valida(day, month, year))
         print("Su fecha es válida.")
     else:
+        print(es_fecha_valida(day, month, year))
         print("Fecha inválida.")
+
+###Verificación del comportamiento de la función
+def verificar():
+    while True:
+        show_boolean(fechas_validas, 0)
+        show_boolean(fechas_invalidas, 0)
+        break
+    return None
+
+def show_boolean(list, ind):
+    for i in range(len(list[ind])):
+        print(list[ind][i], list[ind + 1][i], list[ind + 2][i])
+        print(es_fecha_valida(list[ind][i], list[ind + 1][i], list[ind + 2][i]))
+    return None
+
+fechas_validas = [[29, 28, 31, 30, 1], [2, 2, 12, 6, 1], [2020, 2019, 2023, 2022, 2024],] #día, mes, año cada elemento en el mismo indice es una fecha
+fechas_invalidas = [[29, 31, 32, 31, 30], [2, 4, 1, 6, 2], [2019, 2023, 2022, 2023, 2020],]
 
 ###Bloque principal
 main()
+print()
+verificar()
