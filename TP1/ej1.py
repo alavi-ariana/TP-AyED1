@@ -1,37 +1,79 @@
-###Funciones
+"""
+Este programa busca el mayor y devuelve si es estricto o no, sin utilizar operadores lógicos.
+"""
+from typing import List
 
-def recibir_numeros(num1,  num2, num3):
-    mayor = max(num1, num2, num3)
-    if es_estricto(mayor, num1, num2, num3):
+def recibir_numeros(lista: List[int]) -> int:
+    """ Determina si el número máximo en la lista es estricto.
+
+        Args: 
+            lista (List[int]): Una lista de números enteros. No debe estar vacía.
+
+        Returns:
+            int: Si el número máximo es estricto se devuelve el número máximo,
+            caso contrario se devuelve -1.
+    """
+    mayor = max(lista)
+    if es_estricto(mayor, lista):
         return mayor
     return -1
 
-def verificar_maximo(mayor, num1, num2, num3):
+def verificar_maximo(mayor: int, lista: List[int]) -> int:
+    """ Verifica cuántas veces aparece el número máximo en la lista.
+
+        Args: 
+            mayor (int): El número máximo que se va a buscar en la lista.
+            lista (List[int]): Una lista de número enteros. No debe estar vacía.
+
+        Returns: 
+            int: la cantidad de veces que el número máximo aparece en la lista.
+    """
     count = 0
-    if mayor == num1:
-        count += 1
-    if mayor == num2:
-        count += 1
-    if mayor == num3:
-        count += 1
+    for elements in lista:
+        if mayor == elements:
+            count += 1
     return count
 
-def es_estricto(mayor, num1, num2, num3):
-    count = verificar_maximo(mayor, num1, num2, num3)
+def es_estricto(mayor: int, lista: List[int]) -> bool:
+    """ Determina si el número máximo aparece solo una vez en la lista.
+
+        Args: 
+            mayor (int): El número máximo de la lista.
+            lista (List[int]): Una lista con números enteros.
+
+        Returns:
+            bool: 'True' si el número máximo aparece solo una vez, 'False' en caso contrario.
+    """
+    count = verificar_maximo(mayor, lista)
     return count == 1
 
-def app():
-    num1 = int(input("Ingrese el número: "))
-    num2 = int(input("Ingrese el número: "))
-    num3 = int(input("Ingrese el número: "))
-    resultado = recibir_numeros(num1, num2, num3)
-    if resultado == -1:
-        print("No existe un mayor estricto.")
+def main() -> None:
+    """ El usuario ingresa números hasta que pare y 
+        se le comunica si el número más grande es estricto.
+    """
+    lista: List[int] = []
+    while True:
+        print(lista)
+        try:
+            num_op = int(input("Ingrese el número (-1 para salir): "))
+        except ValueError:
+            print("Sólo debe ingresar números enteros.")
+            continue
+        if num_op == -1:
+            break
+
+        lista.append(num_op)
+
+    if len(lista) == 0:
+        print("Lista vacia.")
     else:
-        print(f"El número mayor estricto es {resultado}.")
-    return None
+        resultado = recibir_numeros(lista)
+        if resultado == -1:
+            print("No existe un mayor estricto.")
+        else:
+            print(f"El número mayor estricto es {resultado}.")
 
-###Bloque principal
-app()
 
 
+main()
+#End-of-file (EOF)
