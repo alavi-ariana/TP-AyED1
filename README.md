@@ -1,10 +1,10 @@
-##Ejercicio 1:
+## Ejercicio 1:
 El 'try-except' se utiliza para manejar excepciones (errores) que podrían ocurrir cuando se ejecuta el código. 
 - El 'try' se ejecuta primero, si no levanta ningun error el bloque 'except' se skipea.
 - El 'except' ocurre cuando se levanta un error en el 'try', en este caso como estoy convirtiendo el input en un entero al poner un float o un string se levanta un 'ValueError' por lo tanto cuando aquello suceda uso un print para decirle al usuario su input es inválido. 
 - Con el 'continue' se vuelve al inicio del bucle 'while' volviendo a solicitar un input.
 
-##Ejercicio 2:
+## Ejercicio 2:
 Para verificar si un año es bisiesto:
     Si el año es divisible por 100 y 4 y 400 o si solo es divisible por 4 **es bisiesto**, caso contrario **no es bisiesto**.
 
@@ -12,13 +12,13 @@ Utilización de 'args' y 'returns':
 - Args (argumentos): describe los parámetros que una función recibe. Especifica el nombre del parámetro, el tipo de dato esperado y una breve descripción de su propósito o uso.
 - Return (retorno): describe el valor que una función devuelve después de ejecutarse. Especifica el tipo de dato que se devuelve y una breve descripción del valor devuelto.
 
-##Ejercicio 3:
+## Ejercicio 3:
 Como la consigna no aclara valor del pasaje y dice "Averiguar en internet el valor actualizado" me tomé la libertad de pedirle al usuario que ingrese su valor de pasaje.
 
-##Ejercicio 4:
+## Ejercicio 4:
 Nada para agregar.
 
-##Ejercicio 5:
+## Ejercicio 5:
 - oblongo: un número es oblongo
 - triangular: un número es triangular: 
 - lambda argumentos: expresion
