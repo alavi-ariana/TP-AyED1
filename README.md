@@ -1,3 +1,5 @@
+![Welcome, dear student, seeking answers. May my knowledge assist you.](https://i.pinimg.com/originals/62/63/86/626386f9cccc8c77fe94ce0532b8af90.jpg) 
+
 ## Ejercicio 1:
 El 'try-except' se utiliza para manejar excepciones (errores) que podrían ocurrir cuando se ejecuta el código. 
 - El 'try' se ejecuta primero, si no levanta ningun error el bloque 'except' se skipea.
@@ -22,8 +24,11 @@ Nada para agregar.
 - oblongo: un número es oblongo cuando se puede obtener multiplicando dos números naturales consecutivos.
 - triangular: un número es triangular si puede expresarse como la suma de un grupo de números naturales consecutivos comenzando desde 1.
 - lambda argumentos: expresion
+  
 **lambda**: Indica que estás definiendo una función lambda.
+
 **argumentos**: Son los parámetros de le función (pueden ser múltiples separados por comas).
+
 **expresión**: Es la operación que la función realizará y cuyo resultado será el valor del retorno. 
 - any : la función 'any' verifica si alguno de los elementos en una secuncia es True. Si al menos uno lo es, retorna True. Deja de evaluar el iterable cuando encuentra el primer True.
 En este caso 'any' se fija en todas la iteraciones si se cumple la condición de num == k * (k+1).
