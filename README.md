@@ -19,8 +19,8 @@ Como la consigna no aclara valor del pasaje y dice "Averiguar en internet el val
 Nada para agregar.
 
 ## Ejercicio 5:
-- oblongo: un número es oblongo
-- triangular: un número es triangular: 
+- oblongo: un número es oblongo cuando se puede obtener multiplicando dos números naturales consecutivos.
+- triangular: un número es triangular si puede expresarse como la suma de un grupo de números naturales consecutivos comenzando desde 1.
 - lambda argumentos: expresion
 **lambda**: Indica que estás definiendo una función lambda.
 **argumentos**: Son los parámetros de le función (pueden ser múltiples separados por comas).
@@ -32,6 +32,10 @@ En este caso 'any' se fija en todas la iteraciones si se cumple la condición de
 
 Probar valores mayor que la raíz de num no es necesario ya que el resultado será mayor que num.
 La raíz cuadrada de un número 'n' es el punto en el que la multiplicación de dos números iguales se aproxima a 'n'.
+
+## Ejercicio 6:
+Para concatenar los dos enteros recibidos se hace uso de una variable aux para guardar el mismo valor de 'b' y después hacer uso de esa variable sin modificar la original. Se hacen los calculos con la var 'aux' y se utiliza un contador:  mientras el resultado de la división no sea 0 va a seguir diviendo el aux con 10 y sumando al contador 1. Ese contador representa la cantidad de digitos que tiene el número. Por lo tanto cuando retorna *a * (10* ** *contador) + b* retorna el valor de 'a' multiplicado 10 elevado a la cantidad de digitos que tiene el número (si tiene 3 digitos será 10^3 = 1000) y se le suma el valor de b, lo que nos da un total que resembla los dos números casteados mediante una resolución matemática.
+
 
 
 
