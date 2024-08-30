@@ -18,22 +18,6 @@ def recibir_numeros(lista: List[int]) -> int:
         return mayor
     return -1
 
-def verificar_maximo(mayor: int, lista: List[int]) -> int:
-    """ Verifica cuántas veces aparece el número máximo en la lista.
-
-        Args: 
-            mayor (int): El número máximo que se va a buscar en la lista.
-            lista (List[int]): Una lista de número enteros. No debe estar vacía.
-
-        Returns: 
-            int: la cantidad de veces que el número máximo aparece en la lista.
-    """
-    count = 0
-    for elements in lista:
-        if mayor == elements:
-            count += 1
-    return count
-
 def es_estricto(mayor: int, lista: List[int]) -> bool:
     """ Determina si el número máximo aparece solo una vez en la lista.
 
@@ -44,7 +28,7 @@ def es_estricto(mayor: int, lista: List[int]) -> bool:
         Returns:
             bool: 'True' si el número máximo aparece solo una vez, 'False' en caso contrario.
     """
-    count = verificar_maximo(mayor, lista)
+    count = lista.count(mayor)
     return count == 1
 
 def main() -> None:
