@@ -21,13 +21,12 @@ def main() -> None:
             b = int(input("Ingresar segundo número: "))
             if a > 0 and b > 0:
                 break
-            else:
-                print("Se necesitan valores enteros positivos.")
+            print("Se necesitan valores enteros positivos.")
         except ValueError:
             print("Ingrese números enteros.")
-            continue
     resultado = calculo(a, b)
     print(f"El número concatenado es {resultado}")
 
-main()
+if __name__ == "__main__":
+    main()
 #End-of-file (EOF)

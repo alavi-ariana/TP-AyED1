@@ -1,5 +1,7 @@
 ![Welcome, dear student, seeking answers. May my knowledge assist you.](https://i.pinimg.com/originals/62/63/86/626386f9cccc8c77fe94ce0532b8af90.jpg) 
 
+# TRABAJO PRÁCTICO 1
+
 ## Ejercicio 1:
 El 'try-except' se utiliza para manejar excepciones (errores) que podrían ocurrir cuando se ejecuta el código. 
 - El 'try' se ejecuta primero, si no levanta ningun error el bloque 'except' se skipea.
@@ -58,9 +60,111 @@ Para concatenar los dos enteros recibidos se hace uso de una variable aux para g
 - Desempaquetar: 
     Con '*fecha' hacemos algo llamado desempaquetar (una tupla o lista), tomamos cada elemento de la lista y lo asignamos a una variable por separado. Es lo mismo que escribir (en este caso): 'fecha[0], fecha[1], fecha[2]'.
 
+## Ejercicio 8
+No me divierte este ejercicio...
 
+## Ejercicio 9
+Nada para agregar. Vivan las naranjas.
 
+# TRABAJO PRÁCTICO 2
 
+## Ejercicio 1
+- reduce() toma una función y una lista, y aplica la función de manera acumulativa a los elementos de la lista.
+- lista[:] es una forma de actualizar el contenido de la lista original. Usar [:] significa que estamos operando sobre la lista en su lugar y no creando una nueva lista.
+- def capicua(lista):
+    supongamos que la lista es [1, 2, 3, 2, 1].
 
+    primera iteración (i = 0):
+    lista[0] es 1.
+    lista[len(lista) - 0 - 1] es lista[4] que también es 1.
+    comparación: 1 == 1, continúa con la siguiente iteración.
 
+    segunda iteración (i = 1):
+    lista[1] es 2.
+    lista[len(lista) - 1 - 1] es lista[3] que también es 2.
+    comparación: 2 == 2, continúa con la siguiente iteración.
 
+    tercera iteración (i = 2):
+    lista[2] es 3.
+    lista[len(lista) - 2 - 1] es lista[2] que también es 3.
+    comparación: 3 == 3, no hay más iteraciones.
+
+## Ejercicio 6
+¿Qué es normalizar una lista de números? 
+Normalizar significa tomar una lista de números y ajustarlos de modo que la suma total de los números sea 1.0, pero manteniendo las proporciones relativas entre ellos. Es decir, los valores siguen manteniendo su relación de magnitud original (si uno es el doble de otro en la lista original, también lo será después de la normalización), pero ahora en una escala más manejable.
+
+Ejemplo práctico:
+Supongamos que tienes tres números: 1, 1 y 2. Esto puede representar, por ejemplo, la cantidad de votos que tres personas recibieron en una competencia.
+
+La suma total de los votos es 1 + 1 + 2 = 4.
+Para normalizar estos números, dividimos cada uno por la suma total:
+El primer 1 se convierte en 1 / 4 = 0.25.
+El segundo 1 se convierte en 1 / 4 = 0.25.
+El 2 se convierte en 2 / 4 = 0.50.
+El resultado es [0.25, 0.25, 0.50]. Este conjunto de números ahora suma 1.0 en total, lo que facilita la comparación y análisis de los valores en proporciones relativas.
+
+## Ejercicio 7 
+- SLICES
+Syntax: secuencia[inicio:fin:paso]
+
+inicio: el índice donde comenzará la rebanada. Si se omite se asume que es el principio de la secuencia.
+fin: el índice donde terminará la rebanada (este índice no está incluido). Si se omite llegará hasta el final de la secuencia.
+paso: es opciona y determina cuántos elementos saltar entre cada uno. 
+
+- slicing fuera de los límites: si el inicio o el fin están fuera del rango de la secuencia, python no genera error, simplemente toma los elementos que pueda.
+- si el inicio es mayor o igual que el fin, o si el paso es incorrecto, obtendrás una lista vacía.
+
+- 'lista1[2 * i + 1:2 * i + 1] = [lista2[i]]':
+la expresión '2 * i + 1' calcula la posición en lista1 donde se debe insertar el elemento de la lista2.
+
+- [2 * i + 1:2 * i + 1]: es una rebana que selecciona un rango vacío en lista 1. esto permite insertar un nuevo elemento sin sobreescribir los existentes.
+
+## Ejercicio 11
+- set(): un conjunto no permite elementos duplicados.
+    - add(): agregar elementos
+    - eliminar elementos: remove() o  discard() <- este no genera error si el elemento no está en el set.
+    - union(): combinar dos conjuntos
+    - intersection(): encuentra los elementos comunes entre conjuntos
+    - difference(): devuelve los elementos presentes en un conjunto pero no en el otro 
+
+# TRABAJO PRÁCTICO 3
+
+## Ejercicio 1
+a. Cargar números enteros en una matriz de N x N
+Crear una matriz cuadrada (con el mismo número de filas y columnas) de tamaño 𝑁×𝑁, donde 𝑁 es un número que el usuario ingresa. Luego pedir al usuario que ingrese los números que llenarán esta matriz.
+
+b. Ordenar en forma ascendente cada una de las filas de la matriz
+Ordenar cada fila (es decir, cada lista de números) de menor a mayor.
+
+c. Intercambiar dos filas
+El usuario elije dos filas específicas de la matriz y luego intercambiar los elementos de esas filas. Por ejemplo, si intercambias la fila 0 con la fila 1, todos los elementos de la fila 0 deben pasar a la fila 1 y viceversa.
+
+d. Intercambiar dos columnas
+Similar a lo anterior, pero en este caso, se deben intercambiar dos columnas. El usuario debe indicar qué columnas desea intercambiar y todos los elementos de esas columnas deben ser intercambiados.
+
+e. Trasponer la matriz sobre sí misma
+La trasposición de una matriz implica cambiar la posición de sus elementos. Para cada elemento 𝐴𝑖𝑗 de la matriz original, debe ocupar la posición 𝐴𝑗𝑖 en la matriz transpuesta. Es decir, los elementos de las filas se convierten en columnas.
+
+f. Calcular el promedio de los elementos de una fila
+Pedir al usuario que ingrese el número de una fila y calcular el promedio de todos los elementos de esa fila. El promedio se obtiene sumando todos los elementos y dividiendo entre la cantidad de elementos.
+
+g. Calcular el porcentaje de elementos con valor impar en una columna
+El usuario ingresa el número de una columna. Luego contar cuántos de los elementos en esa columna son impares y calcular qué porcentaje del total de elementos de esa columna representan.
+
+h. Determinar si la matriz es simétrica con respecto a su diagonal principal
+Una matriz es simétrica respecto a su diagonal principal si los elementos de la posición 𝐴𝑖𝑗 son iguales a los de la posición 𝐴𝑗𝑖 para todos los 𝑖 y 𝑗. En otras palabras, si reflejas la matriz sobre su diagonal principal, los valores deben coincidir.
+
+i. Determinar si la matriz es simétrica con respecto a su diagonal secundaria
+La diagonal secundaria va de la esquina superior derecha a la esquina inferior izquierda. La matriz es simétrica respecto a esta diagonal si 𝐴𝑖𝑗 es igual a 𝐴𝑛−1−𝑗,𝑛−1−𝑖, donde 𝑛 es el tamaño de la matriz.
+
+j. Determinar qué columnas de la matriz son palíndromos
+Una columna es un palíndromo si sus elementos son iguales cuando se leen de arriba hacia abajo y de abajo hacia arriba. 
+
+# TRABAJO PRÁCTICO 4
+
+## Ejercico 1 
+- zip(): toma dos o más iterables y los empareja en pares de elementos. Crea parejas de caracteres de la cadena original y su versión invertida, reccoriéndolas simultáneamente. 
+- all(): toma un iterable y devuelve True si todos los elementos del iterable son True, si uno solo es False devolverá False.
+
+## Ejercicio 4
+Los números romanos cubren hasta el 3999 por lo que si se cambian los rangos a valores menores o mayores habría que cambiar la  tabla de equivalencias.

@@ -22,8 +22,7 @@ def control_gastos(cant: int, valor: int) -> float:
 
 def one_to_twenty(cant: int, valor: int) -> float:
     """De 1 a 20 viajes no hay descuentos. El precio por viaje es el valor máximo. """
-    total = valor * cant
-    return total
+    return valor * cant
 
 def calculo_pasaje(cant: int, valor: int, percentage: float)-> float:
     """
@@ -33,8 +32,7 @@ def calculo_pasaje(cant: int, valor: int, percentage: float)-> float:
         percentage (float): La cantidad de descuentos que se aplica 
                             de acuerdo a la cantidad de viajes.
     """
-    total = cant * (valor * percentage)
-    return total
+    return cant * (valor * percentage)
 
 def es_valido(dato: int, lim1: int):
     """Una generica para poder establecer limites en los input y verificarlos."""
@@ -49,7 +47,6 @@ def main() -> None:
             break
         except ValueError:
             print("Debe ingresar números enteros.")
-            continue
 
     if es_valido(cant, 0) and es_valido(valor, 0):
         total = control_gastos(cant, valor)
@@ -68,7 +65,8 @@ test = [[10, 22, 33, 50, 5, 28], [120, 150, 200, 180, 90, 130],]
 #0. cant de viajes, 1. valor de pasaje
 
 ###Bloque principal
-main()
-print()
-verificar()
+if __name__ == "__main__":
+    main()
+    print()
+    verificar()
 #End-of-file (EOF)

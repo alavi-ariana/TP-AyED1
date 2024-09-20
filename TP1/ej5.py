@@ -10,11 +10,10 @@ while True:
         op_triangular = int(input("TRIANGULAR | Ingrese su número: "))
         if op_oblongo > 0 and op_triangular > 0:
             break
-        else:
-            print("El número debe ser positivo.")
+        print("El número debe ser positivo.")
     except ValueError:
         print("Solo números enteros.")
-        continue
+
 
 if oblongo(op_oblongo):
     print("Es oblongo.")

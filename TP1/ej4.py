@@ -46,7 +46,6 @@ def main() -> None:
             break
         except ValueError:
             print("Debe ingresar números enteros.")
-            continue
 
     if dinero_suficiente(total, dinero):
         vuelto = dinero - total
@@ -63,5 +62,6 @@ def main() -> None:
         print("Dinero insuficiente.")
 
 
-main()
+if __name__ == "__main__":
+    main()
 #End-of-file (EOF)

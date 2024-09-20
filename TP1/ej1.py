@@ -42,7 +42,6 @@ def main() -> None:
             num_op = int(input("Ingrese el número (-1 para salir): "))
         except ValueError:
             print("Sólo debe ingresar números enteros.")
-            continue
         if num_op == -1:
             break
 
@@ -59,5 +58,6 @@ def main() -> None:
 
 
 
-main()
+if __name__ == "__main__":
+    main()
 #End-of-file (EOF)

@@ -26,9 +26,7 @@ def es_bisiesto(year: int) -> bool:
             bool: devuelve 'True' si el año cumple con las condiciones dichas de un año bisiesto,
         caso contrario devuelve 'False'.
     """
-    if (year % 100 == 0 and year % 4 == 0 and year % 400 == 0) or (year % 4 == 0):
-        return True
-    return False
+    return (year % 100 == 0 and year % 4 == 0 and year % 400 == 0) or (year % 4 == 0)
 
 def months_31days(month: int, day: int) -> bool:
     """ Verifica si el mes va a tener 31 días.
@@ -67,7 +65,6 @@ def main() -> None:
             break
         except ValueError:
             print("Debe ingresar números enteros.")
-            continue
 
     if es_fecha_valida(day, month, year):
         print(es_fecha_valida(day, month, year))
@@ -102,7 +99,8 @@ fechas_validas = [[29, 28, 31, 30, 1], [2, 2, 12, 6, 1], [2020, 2019, 2023, 2022
 fechas_invalidas = [[29, 31, 32, 31, 30], [2, 4, 1, 6, 2], [2019, 2023, 2022, 2023, 2020],]
 
 ###Bloque principal
-main()
-print()
-verificar()
+if __name__ == "__main__":
+    main()
+    print()
+    verificar()
 #End-of-file (EOF)

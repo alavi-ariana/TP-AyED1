@@ -5,10 +5,9 @@ def days_inmonth(month: int, year: int) -> int:
     """Me devuelve la cantidad de días en el mes."""
     if month in (1, 3, 5, 7, 8, 10, 12):
         return 31
-    elif month == 2:
+    if month == 2:
         return 29 if es_bisiesto(year) else 28
-    else:
-        return 30
+    return 30
 
 def es_bisiesto(year: int) -> bool:
     """ Verificación si el año es bisiesto.
@@ -79,9 +78,7 @@ def fecha1_menor_fecha2(fecha1: tuple, fecha2: tuple) -> bool:
     """Se calcula si la fecha 1 es menor que la fecha 2."""
     day1, month1, year1 = fecha1
     day2, month2, year2 = fecha2
-    if (day2, month2, year2) > (day1, month1, year1):
-        return True
-    return False
+    return (day2, month2, year2) > (day1, month1, year1)
 
 def opciones() -> None:
     """Muestro las opciones del menú."""
@@ -97,56 +94,58 @@ def main() -> None:
     while True:
         opciones()
         op = input("Ingrese su opción: ")
-        if op == "1":
-            try:
-                day = int(input("Ingrese el día: "))
-                month = int(input("Ingrese el mes: "))
-                year = int(input("Ingrese el año: "))
-                if validar_fecha(day, month, year):
-                    fecha = diasiguiente(day, month, year)
-                    print("FECHA SIGUIENTE")
-                    print(f"{fecha[0]}/{fecha[1]}/{fecha[2]}")
-                else:
-                    print("Debe ingresar una fecha válida.")
-            except ValueError:
-                print("Debe ingresar enteros positivos.")
-        elif op == "2":
-            try:
-                day = int(input("Ingrese el día: "))
-                month = int(input("Ingrese el mes: "))
-                year = int(input("Ingrese el año: "))
-                n = int(input("Cantidad de días a sumar: "))
-                if validar_fecha(day, month, year) and n > 0:
-                    fecha = sumar_dias(day, month, year, n)
-                    print("FECHA CON DÍAS SUMADOS")
-                    print(f"{fecha[0]}/{fecha[1]}/{fecha[2]}")
-                else:
-                    print("Debe ingresar datos válidos.")
-            except ValueError:
-                print("Debe ingresar enteros positivos.")
-        elif op == "3":
-            try:
-                print("PRIMERA FECHA.")
-                day = int(input("Ingrese día: "))
-                month = int(input("Ingrese mes: "))
-                year = int(input("Ingrese año: "))
-                print("SEGUNDA FECHA.")
-                day2 = int(input("Ingrese día: "))
-                month2 = int(input("Ingrese mes: "))
-                year2 = int(input("Ingrese año: "))
-                fecha1 = (day, month, year)
-                fecha2 = (day2, month2, year2)
-                validez = validar_fecha(*fecha1) and validar_fecha(*fecha2)
-                if fecha1_menor_fecha2(fecha1, fecha2) and validez:
-                    resultado = diferencia_fechas(fecha1, fecha2)
-                    print(f"{resultado} día/s")
-                else:
-                    print("Debe ingresar una fecha válida.")
-            except ValueError:
-                print("Debe ingresar enteros positivos.")
+        match op:
+            case "1":
+                try:
+                    day = int(input("Ingrese el día: "))
+                    month = int(input("Ingrese el mes: "))
+                    year = int(input("Ingrese el año: "))
+                    if validar_fecha(day, month, year):
+                        fecha = diasiguiente(day, month, year)
+                        print("FECHA SIGUIENTE")
+                        print(f"{fecha[0]}/{fecha[1]}/{fecha[2]}")
+                    else:
+                        print("Debe ingresar una fecha válida.")
+                except ValueError:
+                    print("Debe ingresar enteros positivos.")
+            case "2":
+                try:
+                    day = int(input("Ingrese el día: "))
+                    month = int(input("Ingrese el mes: "))
+                    year = int(input("Ingrese el año: "))
+                    n = int(input("Cantidad de días a sumar: "))
+                    if validar_fecha(day, month, year) and n > 0:
+                        fecha = sumar_dias(day, month, year, n)
+                        print("FECHA CON DÍAS SUMADOS")
+                        print(f"{fecha[0]}/{fecha[1]}/{fecha[2]}")
+                    else:
+                        print("Debe ingresar datos válidos.")
+                except ValueError:
+                    print("Debe ingresar enteros positivos.")
+            case "3":
+                try:
+                    print("PRIMERA FECHA.")
+                    day = int(input("Ingrese día: "))
+                    month = int(input("Ingrese mes: "))
+                    year = int(input("Ingrese año: "))
+                    print("SEGUNDA FECHA.")
+                    day2 = int(input("Ingrese día: "))
+                    month2 = int(input("Ingrese mes: "))
+                    year2 = int(input("Ingrese año: "))
+                    fecha1 = (day, month, year)
+                    fecha2 = (day2, month2, year2)
+                    validez = validar_fecha(*fecha1) and validar_fecha(*fecha2)
+                    if fecha1_menor_fecha2(fecha1, fecha2) and validez:
+                        resultado = diferencia_fechas(fecha1, fecha2)
+                        print(f"{resultado} día/s")
+                    else:
+                        print("Debe ingresar una fecha válida.")
+                except ValueError:
+                    print("Debe ingresar enteros positivos.")
 
 
 
-main()
+if __name__ == "__main__":
+    main()
 
 # End-of-file (EOF)
