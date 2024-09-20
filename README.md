@@ -129,6 +129,16 @@ la expresión '2 * i + 1' calcula la posición en lista1 donde se debe insertar 
 
 # TRABAJO PRÁCTICO 3
 
+(https://www.profesorenlinea.cl/imagenmatematica/Matriz_tipos005.jpg)
+
+Una matriz es una estructura rectangular de números organizados en filas y columnas.
+Cada matriz siguen un patrón expecífico y al identificarlos se pueden construir las matrices de manera sistemática.
+
+Pensamiento lógico:
+1. identificar el patrón: observa cómo se distribuyen los números y trata de encontrar reglas generales para llenar las matrices.
+2. usar la indexación: recorda que podes acceder a posiciones en la matriz utilizando índices. esto permite colocar valores específicos en las posiciones correctas.
+3. generalización: cuando encuentres una regla, intenta formularla de manera que se aplique a matrices de cualquier tamaño (NxN)
+
 ## Ejercicio 1
 a. Cargar números enteros en una matriz de N x N
 Crear una matriz cuadrada (con el mismo número de filas y columnas) de tamaño 𝑁×𝑁, donde 𝑁 es un número que el usuario ingresa. Luego pedir al usuario que ingrese los números que llenarán esta matriz.
@@ -159,6 +169,25 @@ La diagonal secundaria va de la esquina superior derecha a la esquina inferior i
 
 j. Determinar qué columnas de la matriz son palíndromos
 Una columna es un palíndromo si sus elementos son iguales cuando se leen de arriba hacia abajo y de abajo hacia arriba. 
+
+## Ejercicio 2
+- matriz a: es una matriz diagonal, donde los valores en la diagonal son impares.
+    patrón: se coloca un número impar en la diagonal principal y cero en el resto.
+
+- matriz b: los valores decrecen desde la esquina superior derecha hacia la inferior izquiera.
+    patrón: se coloca un número decreciente en la diagonal secundaria.
+    iniciamos desde el valor máximo y lo decrecemos en cada posición de la diagonal.
+
+- matriz c: se rellena con números crecientes en las filas inferiores y columnas a la izquiera, formando un triangulo inferior izquierdo.
+    patrón: coloca un número creciente en una forma triangular.
+    a medida que avanzamos por las filas, aumentamos el número que colocamos.
+
+- matriz d: todas las filas contienen el mismo número, que decrece en cada fila sucesiva.
+    patrón: rellena toda la fila con el mismo número, que decrece de fila a fila.
+
+- matriz e: alterna entre colocar un valor creciente en la diagonal principal y en la diagonal secundaria.
+    patrón: alternancia en la diagonal principal y secundaria
+    colocamos un número en posiciones específicas basándonos en el índice
 
 # TRABAJO PRÁCTICO 4
 
