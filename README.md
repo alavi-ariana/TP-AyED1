@@ -168,3 +168,43 @@ Una columna es un palíndromo si sus elementos son iguales cuando se leen de arr
 
 ## Ejercicio 4
 Los números romanos cubren hasta el 3999 por lo que si se cambian los rangos a valores menores o mayores habría que cambiar la  tabla de equivalencias.
+
+## Ejercicio 5
+- r'\b\w{' + str(n) + r',}\b' :
+    r'' : indica que la cadena es una cadena cruda, los caracteres de escape no se procesan.
+    \b : límite de palabra. esto asegura que el patrón busque coincidencias que comiencen y terminen en los límites de las palabras. Evita que coincida con caracteres que no sean parte de palabras (como signos de puntuación).
+    \w : coincide con cualquier carácter de palabra. equivalente a [a-zA-Z0-9_]
+    {n,} : indica que queremos buscar un mínimo de n repeticiones del carácter anterior (en este caso \w).
+    '\b' (al final): asegurar que la coincidencia termine en un límite de palabra. garantiza que no se incluyan caracteres adicionales que no pertenezcan a la palabra.
+
+## Ejercicio 7
+- cadena[:start] : esto obtiene la parte de la cadena desde el inicio hasta la posición de inicio (sin incluirla)
+- cadena[start + carac:] : esto obtiene la parte de la cadena que va desde la posición de inicio más la cantidad de caracteres a eliminar hasta el final de la cadena.
+- eliminar_subcadena_sinslice: se usa un bucle para iterar por cada caracter de la cadena. si el indice no esta dentro del rango de la subcadena a eliminar, se añade al resultado
+- map(int, input().split(",")):  obtengo una cadena con el input, lo divido en subcadena con split y lo convierto en un entero.
+
+## Ejercicio 9
+- re.findall(patron, cadena): extrae todas las palabras y sus signos de puntuación asociados
+- patron = r'[.,¡¿;]*\w+[\w\']*[.,!?;]*'  : 
+    \w+ : busca una o más (+) letras, números o guion bajos (\w); equivalente a [a-zA-Z-0-9_]
+    [\w\']* : busca 0 o más caracteres que sean letras (*), números o guion bajos dentro de la palabra (\w), esto permite que se incluyan palabras que tiene apóstrofes (') como 'dónde'.
+    [.,!?;]* : esto busca 0 o más (*) signos de puntuación, especificamente: punto(.), coma(,), interrogación(?), exclamación(!) y punto y coma(;) esto permite que si aparece algun signo de puntuación en el final o al principio de la palabra se incluya
+
+## Ejercicio 10
+- re.sub(pattern, repl, string): reemplaza todas las ocurrencias del patrón en string con repl y devuelve la cadena resultante.
+- re.subn(): hace lo mismo que re.sub() pero también devuelve la cantidad de reemplazos realizados. retorna una tupla que contiene (cadena modificada, entero)
+- patron = r'\b' + re.escape(og) + r'\b'  :
+    r'\b: indica el inicio o el final de una palabra, asegura que coincida solo con palabras completas, no con fragmentos de otras palabras. ej: 'perro' coincide con 'perro' pero no con 'perros'.
+    re.escape(): escapa cualquier carácter especial.
+
+## Ejercicio 11
+- '.*?'.join(subcadena) : busca cada carácter de la subcadena, permitiendo que haya cualquier número de caracteres entre ellos.
+    .*? : cero o más caracteres de cualquier tipo. esto permite que cualquier carácter (incluyendo espacios y signos de puntuación) esten presentes entre los caracteres de la subcadena
+
+## Ejercicio 14
+- ^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(com|com\.ar)$  :
+    ^[a-zA-Z0-9]+ asegura que el nombre de usuario solo contenga caracteres alfanuméricos y no esté vacio
+    @[a-zA-Z0-9]+ exige que haya un simbolo @ seguido de un dominio que también debe tener caracteres alfanuméricos
+    \.(com|com\.ar)$ garantiza que el correo termine en .com o .com.ar
+
+- correo.split("@")[1] : la primera parte es el nombre del usuario, la segunda parte es el dominio.
