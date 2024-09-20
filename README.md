@@ -129,7 +129,7 @@ la expresión '2 * i + 1' calcula la posición en lista1 donde se debe insertar 
 
 # TRABAJO PRÁCTICO 3
 
-(https://www.profesorenlinea.cl/imagenmatematica/Matriz_tipos005.jpg)
+![hola mundo](https://www.profesorenlinea.cl/imagenmatematica/Matriz_tipos005.jpg)
 
 Una matriz es una estructura rectangular de números organizados en filas y columnas.
 Cada matriz siguen un patrón expecífico y al identificarlos se pueden construir las matrices de manera sistemática.
