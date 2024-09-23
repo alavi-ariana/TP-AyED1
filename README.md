@@ -188,6 +188,7 @@ Una columna es un palíndromo si sus elementos son iguales cuando se leen de arr
 - matriz e: alterna entre colocar un valor creciente en la diagonal principal y en la diagonal secundaria.
     patrón: alternancia en la diagonal principal y secundaria
     colocamos un número en posiciones específicas basándonos en el índice
+    (:=) :walrus operator permite actualizar el valor de una variable en el mismo lugar donde la usas, siempre y cuando se cumpla una condición.
 
 # TRABAJO PRÁCTICO 4
 

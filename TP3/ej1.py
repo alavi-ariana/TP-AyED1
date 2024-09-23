@@ -4,13 +4,16 @@
 
 def a(n: int) -> list[list[int]]:
     """Carga una matriz de tamaño nxn con valores ingresados por el usuario."""
-    return [[int(input(f"Ingrese el elemento en la posición {j + 1} de la lista {i + 1}")) for j in range(n)] for i in range(n)]
+    return [[int(input(f"Ingrese el elemento en la posición {j + 1} de la lista {i + 1}: ")) for j in range(n)] for i in range(n)]
 
 def b() -> list[list[int]]:
     """ Ordena cada fila de la matriz en forma ascendente."""
     for fila in matriz:
         fila.sort()
     return matriz
+
+def es_valido(num1: int, num2: int) -> bool:
+    return num1 < len(matriz) and num2 < len(matriz)
 
 def c(num: int, num2: int) -> None:
     """ Intercambia dos filas de la matriz en la posición de la otra."""
@@ -25,8 +28,9 @@ def e() -> None:
     """Transpone la matriz sobre sí misma."""
     longitud = len(matriz)
     for i in range(longitud):
-        for j in range(1 + 1, longitud):
+        for j in range(i + 1, longitud):
             matriz[i][j], matriz[j][i] = matriz[j][i], matriz[i][j]
+
 
 def f(fila_op: int) -> float:
     """ Calcula el promedio de los elementos de una fila especifica"""
@@ -64,15 +68,30 @@ def i() -> bool:
                 return False
     return True
 
+def capicua(columna):
+    """Determina si una columna es capicua"""
+    return columna == columna[::-1]
+
+def j():
+    """Devuelve una lista con columnas de una matriz que son palindromas"""
+    return [col for col in range(len(matriz)) for row in range(len(matriz)) if capicua(matriz[row][col])]
+
+
 def mostrar_matriz() -> None:
     """ Muestra la matriz"""
     for fila in matriz:
         print(fila)
 
 if __name__ == "__main__":
-    N =int(input("Ingrese el valor de N para la matriz NxN: "))
+    while True:
+        try:
+            n = int(input("Ingrese el valor de N para la matriz NxN: "))
+            if n > 0:
+                break
+        except ValueError:
+            print("Debe ingresar valores mayor a 0.")
 
-    matriz = a(N)
+    matriz = a(n)
     mostrar_matriz()
 
     b()
@@ -80,25 +99,37 @@ if __name__ == "__main__":
 
     num = int(input("Ingrese el número de la fila a intercambiar: "))
     num2 = int(input("Ingrese el número de la fila con la que intercambiarla: "))
-    c(num, num2)
-    mostrar_matriz()
+    if es_valido(num, num2):
+        c(num, num2)
+        mostrar_matriz()
+    else:
+        print("Filas no válidas.")
 
     nnumi = int(input("Ingrese el número de la columna a intercambiar: "))
     nnumi2 = int(input("Ingrese la otra columna a intercambiar: "))
-    d(nnumi, nnumi2)
-    mostrar_matriz()
+    if es_valido(nnumi, nnumi2):
+        d(nnumi, nnumi2)
+        mostrar_matriz()
+    else:
+        print("Columnas no válidas.")
 
     e()
     mostrar_matriz()
 
     fila_op = int(input("Ingrese el número de fila para calcular el promedio: "))
-    promedio = f(fila_op)
-    print(f"El promedio es de {promedio}")
-    mostrar_matriz()
+    if 0 < fila_op < len(matriz):
+        promedio = f(fila_op)
+        print(f"El promedio es de {promedio}")
+        mostrar_matriz()
+    else:
+        print("Fila inválida")
 
     colum_op = int(input("Ingrese la columna para calcular el porcentaje de impares: "))
-    porcentaje = g(colum_op)
-    print(f"El porcenta de elementos impares en la columan {colum_op} es: {porcentaje:.2f}%")
+    if 0 < colum_op < len(matriz):
+        porcentaje = g(colum_op)
+        print(f"El porcenta de elementos impares en la columan {colum_op} es: {porcentaje:.2f}%")
+    else:
+        print("Columna no válida")
 
     simetrica_principal = h()
     print(f"El valor de simetria de la matriz es {simetrica_principal}")
