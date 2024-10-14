@@ -1,6 +1,11 @@
 """Convertido a número romanoentre 0 y 3999"""
 def romano(entero: int) -> str:
-    """ Convierte un número entero en su representación en números romanos"""
+    """ Convierte un número entero en su representación en números romanos
+        Args:
+            - entero (int): número a convertir, debe ser mayor a 0 y menor a 3999.
+        Returns:
+            - str: la conversión a número romano del entero.
+    """
     num_rom = [
         (1000, "M"),
         (900, "CM"),

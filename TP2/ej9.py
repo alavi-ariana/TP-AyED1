@@ -1,8 +1,8 @@
 """ Lista por comprensión entre A y B con los múltiplos de 7 que no sean
     múltiplos de 5."""
 if __name__ == "__main__":
-    a: list = []
-    b: list = []
+    a = []
+    b = []
     while True:
         try:
             min_a = int(input("Ingrese el rango a: "))

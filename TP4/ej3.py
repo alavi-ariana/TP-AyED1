@@ -9,12 +9,14 @@ def claves(maestra: str) -> tuple:
                 clave1: contiene los caracteres pares de la cadena maestra
                 clave2: contiene los caracteres en impares de la cadena maestra
     """
-    clave1, clave2 = maestra[::2], maestra[1::2]
-    return clave1, clave2
+    return maestra[::2], maestra[1::2]
 
 if __name__ == "__main__":
     llave_maestra = input("Ingrese la clave maestra: ")
-    clave_1, clave_2 = claves(llave_maestra)
-    print(f"Clave 1: {clave_1} - Clave 2: {clave_2}")
+    if not llave_maestra:
+        print("Debe ingresar algo.")
+    else:
+        clave_1, clave_2 = claves(llave_maestra)
+        print(f"Clave 1: {clave_1} - Clave 2: {clave_2}")
 
 # End-of-file (EOF)

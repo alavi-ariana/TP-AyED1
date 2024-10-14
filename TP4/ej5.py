@@ -5,7 +5,7 @@ import re
 def filtrar_palabras(cadena: str, n: int) -> str:
     """ Filtra las palabras de una cadena que tienen n o más caracteres
         Args:
-            - cadena(str): la frase original
+            - cadena(str): la frase original, no debe ser vacio.
             - n (int): el número mínimo de caracteres que deben tener las palabras para el resultado
         Returns:
             - str: una cadena con las palabras que tienen n o más caracteres, separadas por espacios
@@ -17,7 +17,7 @@ def filtrar_palabras(cadena: str, n: int) -> str:
 def filtrar_x_ciclo(cadena: str, n: int) -> str:
     """ Filtra las palabras de una cadena que tienen n o más caracteres haciendo uso de ciclos
             Args:
-            - cadena(str): la frase original
+            - cadena(str): la frase original, no debe ser vacio.
             - n (int): el número mínimo de caracteres que deben tener las palabras para el resultado
         Returns:
             - str: una cadena con las palabras que tienen n o más caracteres, separadas por espacios
@@ -33,17 +33,17 @@ def filtrar_listra_comprension(cadena: str, n: int) -> str:
     """ Filtra las palabras de una cadena que tienen n o más caracteres haciendo uso de listas
         por comprensión
             Args:
-            - cadena(str): la frase original
+            - cadena(str): la frase original, no debe ser vacio.
             - n (int): el número mínimo de caracteres que deben tener las palabras para el resultado
         Returns:
             - str: una cadena con las palabras que tienen n o más caracteres, separadas por espacios
     """
-    return ' '.join([palabra for palabra in cadena.split() if palabra >= n])
+    return ' '.join([palabra for palabra in cadena.split() if len(palabra) >= n])
 
 def filtrar_filter(cadena: str, n: int) -> str:
     """ Filtra las palabras de una cadena que tienen n o más caracteres haciendo uso de filter()
             Args:
-            - cadena(str): la frase original
+            - cadena(str): la frase original, no debe ser vacio.
             - n (int): el número mínimo de caracteres que deben tener las palabras para el resultado
         Returns:
             - str: una cadena con las palabras que tienen n o más caracteres, separadas por espacios
@@ -52,8 +52,15 @@ def filtrar_filter(cadena: str, n: int) -> str:
 
 
 if __name__ == "__main__":
-    frase = input("Ingrese una frase: ")
-    n_op = int(input("Ingrese el número de longitud de las palabras: "))
+    while True:
+        try:
+            frase = input("Ingrese una frase: ")
+            if frase:
+                n_op = int(input("Ingrese el número de longitud de las palabras: "))
+                break
+        except ValueError:
+            print("Debe ingresar valores válidos.")
+
     resultado_patron = filtrar_palabras(frase, n_op)
     resultado_ciclo = filtrar_x_ciclo(frase, n_op)
     resultado_lista = filtrar_listra_comprension(frase, n_op)

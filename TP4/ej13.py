@@ -1,6 +1,11 @@
 """ programa"""
 def num_to_letras(num: int) -> str:
-    """ Convierte un entero  entre 0 y 1 billón en su representación en letras"""
+    """ Convierte un entero  entre 0 y 1 billón en su representación en letras
+    Args:
+        - num(int): entero a convertir en letras.
+    Returns:
+        - str: cadena del número convertido.
+    """
     dict_letras = {
             0: "cero", 1: "uno", 2: "dos", 3: "tres", 4: "cuatro", 5: "cinco",
             6: "seis", 7: "siete", 8: "ocho", 9: "nueve", 10: "diez",

@@ -8,7 +8,8 @@ def correo_valido(correo: str) -> bool:
         - contiene un solo carácter @
         - el dominio tiene al menos un carácter
         - el dominio termina en .com o .com.ar
-
+        Args:
+            - correo(str): correo a verificar.
         Returns:
             bool: True si el correo es válido, caso contrario False.
     """
@@ -16,7 +17,12 @@ def correo_valido(correo: str) -> bool:
     return bool(re.match(patron, correo))
 
 def sacar_dominio(correo: str) -> str:
-    """ Extacción y retorno del dominio del mail."""
+    """ Extacción y retorno del dominio del mail.
+        Args:
+            - correo(str): correo de donde extraer el dominio.
+        Returns:
+            - str: dominio extraido.
+    """
     return correo.split("@")[1]
 
 if __name__ == "__main__":
