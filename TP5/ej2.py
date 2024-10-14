@@ -1,10 +1,13 @@
-"""Programa"""
+"""Programa que  reciba como  parámetros dos  cadenas  de  caracteres  con-
+teniendo  números  reales,  sume  ambos  valores  y  devuelva  el  resultado  como  un 
+número  real. Devolver -1  si alguna de las cadenas no contiene un número  válido, 
+utilizando manejo de excepciones para detectar el error."""
 import re
 from typing import List
 from functools import reduce
 
 def suma(valores: str) -> float:
-    """Suma los dos números que se encuentren en cadena1 y cadena2.
+    """Suma los dos números que se encuentren en valores.
     Args:
         - valores: cadenas con números.
     Returns:
@@ -31,16 +34,6 @@ def sacar_nums(cadena: str) -> List[float]:
     numeros = re.findall(r'\d+\.\d+|\d+', cadena)
     return [float(numero) for numero in numeros]
 
-def pedir_num() -> str:
-    """Solicita al usuario dos cadenas separadas por comas.
-    Args:
-        - None
-    Returns:
-        - str: cadena con los números ingresados.
-    """
-    cadena1 = input("Ingrese los números separados por comas: ")
-    return cadena1
-
 def main() -> None:
     """Ejecuta todo el código.
     Args:
@@ -50,7 +43,7 @@ def main() -> None:
     """
     while True:
         try:
-            valores = pedir_num()
+            valores = input("Ingrese los números separados por comas: ")
             break
         except ValueError:
             print("Ingrese valores válidos.")
