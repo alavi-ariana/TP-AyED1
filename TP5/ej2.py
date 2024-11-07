@@ -9,7 +9,7 @@ from functools import reduce
 def suma(valores: str) -> float:
     """Suma los dos números que se encuentren en valores.
     Args:
-        - valores: cadenas con números.
+        - valores: cadena de strings.
     Returns:
         - float: siempre retorna un entero, sea el resultado de la suma o -1 si no se pudo realizar.
     """

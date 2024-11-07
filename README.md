@@ -238,3 +238,4 @@ Los números romanos cubren hasta el 3999 por lo que si se cambian los rangos a 
     \.(com|com\.ar)$ garantiza que el correo termine en .com o .com.ar
 
 - correo.split("@")[1] : la primera parte es el nombre del usuario, la segunda parte es el dominio.
+
