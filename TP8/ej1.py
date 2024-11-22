@@ -70,7 +70,7 @@ def pedir_n() -> int:
     except ValueError:
         print("Debe ingresar un entero positivo.")
 
-def diasiguiente(fecha: Tuple[int, int, int]) -> Tuple:
+def diasiguiente(fecha: Tuple[int, int, int]) -> Tuple[int, int, int]:
     """Calcula la fecha siguiente a la fecha dada.
         Returns:
             tuple: retorna la fecha siguiente.
@@ -98,7 +98,7 @@ def sumar_dias(n: int, fecha: Tuple[int, int, int]) -> Tuple[int, int, int]:
         fecha = diasiguiente(fecha)
     return fecha
 
-def pedir_horario() -> Tuple:
+def pedir_horario() -> Tuple[int, int]:
     """Solicita enteros que cumplan con el formato xx:xx y los devuelve.
     Returns:
         Tuple: tupla con los enteros en el formato hora, minutos.

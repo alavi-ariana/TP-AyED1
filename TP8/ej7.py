@@ -1,8 +1,13 @@
 import random as rn
 from typing import Set
 
-def generar_conjunto(n: int) -> Set:
-    """D"""
+def generar_conjunto(n: int) -> Set[int]:
+    """Genera un conjunto con n cantidad de intentos.
+    Args:
+        n: cantidad de intentos a hacer para rellenar el conjunto.
+    Returns:
+        Set: conjunto con elementos enteros.
+    """
     conjunto = set()
     for _ in range(n):
         conjunto.add(rn.randint(0, 9))
@@ -31,7 +36,7 @@ def valores_op() -> int:
     except ValueError:
         print("Debe ingresar un entero.")
 
-def eliminar(op, conjunto) -> Set:
+def eliminar(op, conjunto) -> Set[int]:
     """Elimina del conjunto el número dado por el usuario.
     Args:
         op: entero a borrar.
