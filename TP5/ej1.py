@@ -16,11 +16,8 @@ def pedir_num() -> int:
         print(f"Error: {e}")
 
 def main() -> None:
-    """Función principal que ejecuta el código.
-    Args:
-        - None
-    Returns:
-        - None
+    """Flujo principal que maneja todo el programa.
+        Returns: None
     """
     while True:
         op = pedir_num()

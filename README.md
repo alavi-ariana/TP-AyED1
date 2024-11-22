@@ -239,3 +239,34 @@ Los números romanos cubren hasta el 3999 por lo que si se cambian los rangos a 
 
 - correo.split("@")[1] : la primera parte es el nombre del usuario, la segunda parte es el dominio.
 
+# TRABAJO PRÁCTICO 8
+## Ejercicio 3:
+- patron: ^([a-zA-Z0-9._-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})(?:\.([a-zA-Z]{2,}))?$
+
+1. ^ y $
+    ^: indica el inicio de la cadena. 
+    $: indica el final de la cadena.
+
+2. ([a-zA-Z0-9._-]+)
+    [a-zA-Z0-9._-]: Permite letras (a-z, A-Z), números (0-9), puntos (.), guiones bajos (_) y guiones medios (-).
+    +: Indica que debe haber al menos un carácter válido.
+
+3. @: carácter obligtoiro que separa el nombre del usuario del dominio.
+
+4. \.([a-zA-Z]{2,})
+    \.: Literal que detecta el punto separador (debe estar escapado con \ porque el punto es un carácter especial en regex).
+    [a-zA-Z]: Permite solo letras.
+    {2,}: Indica que debe haber al menos 2 caracteres.
+
+5. (?:\.([a-zA-Z]{2,}))?
+    (?:...): Es un grupo no capturante. Esto significa que no lo incluiremos en los resultados como un grupo separado, pero lo usamos para agrupar partes del patrón.
+    \.: Detecta el punto separador.
+    [a-zA-Z]{2,}: Permite solo letras, con al menos 2 caracteres.
+    ?: Indica que esta parte es opcional.
+
+
+- groups(): Devuelve todas las subcadenas capturadas en una tupla.
+
+## Ejercicio 4:
+Se utiliza el operador &, que es el operador de intersección de conjuntos en Python. Este operador devuelve un nuevo conjunto que contiene solo los elementos que están presentes en ambos conjuntos (es decir, los valores que son comunes entre las dos fichas).
+

@@ -25,6 +25,9 @@ def sacar_indice(lista):
     print("Se hicieron 3 errores. Bye!")
 
 def main() -> None:
+    """Flujo principal que maneja todo el programa.
+        Returns: None
+    """
     lista = ingresar_num()
     print(lista)
     sacar_indice(lista)

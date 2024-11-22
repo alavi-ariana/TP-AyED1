@@ -35,11 +35,8 @@ def sacar_nums(cadena: str) -> List[float]:
     return [float(numero) for numero in numeros]
 
 def main() -> None:
-    """Ejecuta todo el código.
-    Args:
-        - None
-    Returns:
-        - None
+    """Flujo principal que maneja todo el programa.
+        Returns: None
     """
     while True:
         try:

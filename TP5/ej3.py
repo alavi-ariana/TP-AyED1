@@ -6,7 +6,9 @@ inválidos deberá realizarse a través de excepciones"""
 def nombre_mes(num_mes: int) -> str:
     """Recibe un número y devuelve el mes asignado a ese número.
     Args:
-        - num_mes(int): 
+        - num_mes(int): entero para sacar el valor de la llave en el diccionario.
+    Returns:
+        str: el mes que corresponde.
     """
     meses = {1: "Enero",
              2: "Febrero",
@@ -26,7 +28,9 @@ def nombre_mes(num_mes: int) -> str:
         return "Número sin mes asignado, no existe."
 
 def main() -> None:
-    """hola"""
+    """Flujo principal que maneja todo el programa.
+        Returns: None
+    """
     while True:
         try:
             num_mes = int(input("Ingrese número del mes: "))
